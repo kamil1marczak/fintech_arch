@@ -1,0 +1,82 @@
+---
+Time to market:
+
+Inhouse or external:
+  - Inhouse
+  - Externam
+  - Mix
+
+Entity type:
+  - Universal banks
+  - Investment banks
+  - Private banking and wealth management
+  - Collective investment fund
+  - Insurance companies
+  - Brokerage firms
+  - Lending company
+
+Client type:
+  - Private individuals
+  - Business
+
+Localisation:
+  - Eea european economic area
+  - Usa
+  - Central-South africa
+  - Far east
+  - middle East
+  - Other
+
+
+Brokerage:
+  - Bonds
+  - Listed shares
+  - Unlisted securities
+  - Derivatives
+  - Receivables
+
+Transactions:
+  - Clearing house integrations
+  - Integration 3r party solution
+  - Cryptocurrency internal
+  - Cryptocurrency 3rd
+
+Management:
+  - CRM
+  - Reporting - supervision
+  - Reporting - shareholders
+  - Risk Management
+  - Branches Management
+
+Security:
+  - KYC
+  - 2FA
+  - AML
+  - Active Fraud Prevention
+
+Cards:
+  - Card issuer
+  - 3Rd party provider
+
+Client interface:
+  - Web app
+  - Mobile
+  - Customer support
+
+Lending:
+  No Lendings:
+  Traditional Scoring: Traditional Scoring
+  AI Scoring: AI Scoring
+
+Accounts:
+  - Bank accounts
+  - Wallets
+  - 3Rd crypto
+  - Crypto hosted
+
+White lavel provider:
+  - None
+  - Transactions
+  - Cards
+  - Baas
+  - Payment getaway for merchants
