@@ -1,1 +1,14 @@
-jupyterlab notebook voila diagrams pyyaml ipywidgets jupyterthemes jupyter_contrib_nbextensions python-graphviz yapf nbinteract jupyterlab numpy pymdown-extensions voila-material
+jupyterlab
+notebook
+voila
+diagrams
+pyyaml
+ipywidgets
+jupyterthemes
+jupyter_contrib_nbextensions
+yapf
+# nbinteract
+numpy
+pymdown-extensions
+voila-material
+ipython
