@@ -31,6 +31,8 @@ class ArchitectureGenerator:
         self.accounts = accounts
         self.white_label = white_label
 
+        display(self.transactions)
+
         # if brokerage or client_type or lendings:
         self.diagram_core_banking()
         # if transactions:
@@ -54,9 +56,27 @@ class ArchitectureGenerator:
 
                 if self.brokerage:
                     with Cluster("Core Banking Solution Brokerage"):
-                        cbs_brokerage = [CEPH_OSD(i) for i in self.brokerage]
 
-                        cbs_brokerage >> database_history
+                        if self.brokerage and "Bonds" in self.brokerage:
+                            bonds_cbs = CEPH_OSD("Bonds")
+                            bonds_cbs >> database_history
+
+                        if self.brokerage and "Listed shares" in self.brokerage:
+                            list_cbs = CEPH_OSD("Listed shares")
+                            list_cbs >> database_history
+
+                        if self.brokerage and "Unlisted securities" in self.brokerage:
+                            uns_cbs = CEPH_OSD("Unlisted securities")
+                            uns_cbs >> database_history
+
+                        if self.brokerage and "Derivatives" in self.brokerage:
+                            der_cbs = CEPH_OSD("Derivatives")
+                            der_cbs >> database_history
+
+                        if self.brokerage and "Listed Receivables" in self.brokerage:
+                            lrec_cbs = CEPH_OSD("Listed Receivables")
+                            lrec_cbs >> database_history
+
 
                 if self.client_type:
                     with Cluster("Core Banking Solution Clients Data"):
@@ -98,7 +118,7 @@ class ArchitectureGenerator:
 
     def diagram_transaction(self):
 
-        if self.transactions:
+        # if self.transactions:
             with Diagram("Transations", show=False, direction="TB", filename="./src/transactions"):
                 with Cluster("INTERNAL"):
                     with Cluster("Core Banking Solution"):
@@ -419,10 +439,30 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    ArchitectureGenerator(vars(args))
+    ArchitectureGenerator(**(vars(args)))
 
-    # display(vars(args))
+    display(vars(args))
 
     # import pprint
     #
     # pprint.pprint(vars(args))
+#
+# Image(filename='./src/core_banking.png')
+# Image(filename='./src/lending.png')
+# Image(filename='./src/KYC.png')
+# Image(filename='./src/2FA.png')
+# Image(filename='./src/management.png')
+# Image(filename='./src/transactions.png')
+#
+# def import_image(filename):
+#     Image(filename=f'./src/{filename}')
+#
+#
+# file = open("images/WidgetArch.png", "rb")
+# image = file.read()
+# widgets.Image(
+#     value=image,
+#     format='png',
+#     width=300,
+#     height=400,
+# )
